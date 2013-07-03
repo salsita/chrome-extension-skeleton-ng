@@ -1,0 +1,31 @@
+{
+  "name": "Chrome Angular extension with require.js",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "angular.js chrome extension with require.js",
+  "icons": {
+    "48": "images/icon.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "html/application.html#/popup",
+    "default_title": "Extension action"
+  },
+
+  "background": {
+    "page": "html/background.html"
+  },
+  "options_page": "html/application.html#/options",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "\u003Call_urls\u003E"
+  ],
+  "web_accessible_resources": [
+    "js/*",
+    "html/*",
+    "css/*",
+    "images/*"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "chrome-angular-skeleton",
+  "version": "0.0.0",
+  "devDependencies": {
+    "karma-coverage": "~0.0.1",
+    "karma-mocha": "~0.0.1",
+    "karma-chrome-launcher": "x.x.x"
+  }
+}

@@ -1,0 +1,59 @@
+<div class="container">
+  <div>
+    <h1>Extension options<h1>
+  </div>
+  <div>
+    <div>
+      <form name="optionsForm">
+        <div>
+          <input type="checkbox" ng-model="config.boolOption">
+            Do you want boolOption should be true?
+          </input>
+        </div>
+        <p/>
+        <div ng-class="{error: optionsForm.yourName.$invalid}">
+          <label>Change Name</label>
+          <input type="text" name="yourName" ng-model="config.name" placeholder="Change a name here" required>
+          <span ng-show="optionsForm.yourName.$error.required" class="help-inline">Required</span>
+        </div>
+        <div/>
+
+        <p/>
+      </form>
+    </div>
+
+    <div>
+      <label>List of hosts</label>
+      <form name="listForm">
+        <div ng-class="{error: listForm.search.$invalid}">
+          <input type="text" name="search" ng-model="search" class="search-query" placeholder="Add new or Search" required/>
+          <button class="btn-mini btn-primary"  ng-click="AddHost()" ng-disabled="listForm.search.$invalid">Add</button>
+        </div>
+      </form>
+      <div>
+        <table class="table-striped">
+          <thead>
+            <tr>
+              <th>Url</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(url, val) in config.hostsList | searchFilter:search">
+              <td><label>{{url}}</label></td>
+              <td>
+                <a ng-click="RemoveHost(url)"><i class="icon-remove"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p/>
+    <div>
+      <button class="btn"  ng-click="Cancel()">Cancel</button>
+      <button class="btn btn-primary"  ng-click="ChangeOptions()" ng-disabled="optionsForm.$invalid">Change options</button>
+    </div>
+  </div>
+</div>
