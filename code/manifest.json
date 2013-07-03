@@ -27,5 +27,19 @@
     "html/*",
     "css/*",
     "images/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/lib/require.js",
+        "js/lib/jquery.js",
+        "js/lib/underscore.js",
+        "js/requireContent.js",
+        "js/requireConfig.js",
+        "js/content.js"
+      ],
+      "css": ["css/bootstrap.css"]
+    }
   ]
 }
