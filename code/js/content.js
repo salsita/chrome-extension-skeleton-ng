@@ -1,4 +1,4 @@
-requirejs.config(requireConfig);
+  requirejs.config(requireConfig);
 
 requirejs([ 'jquery',
             'config',
@@ -6,14 +6,16 @@ requirejs([ 'jquery',
             'util/messagingClient',
             'lib/purl',
             'logging',
-            'angular'],
+            'angular',
+            'content/contentApp'],
 function(   $,
             config,
             messaging,
             client,
             purl,
             logging,
-            angular) {
+            angular,
+            contentApp) {
 
   // uncomment the following line if content should be handling some requests
   // sent from background (when appropriate handler is implemented in
@@ -32,16 +34,18 @@ function(   $,
     }
   }, function(response) {
     $(function() {
-      // inject html to content page
+      // inject html to content page (begin of the body)
       $(response)
-      .appendTo('body');
+      .prependTo('body');
 
       var contentDiv = $('#contentDiv');
 
+      /*
       var contentApp = angular.module("contentApp", []);
       contentApp.controller("contentController", function($scope, $http){
-        $scope.host = "www.test.com";
+        $scope.content_script = "Content Script";
       });
+      */
 
       angular.bootstrap(contentDiv, [contentApp['name']]);
       // Because of RequireJS we need to bootstrap the app app manually
@@ -51,7 +55,7 @@ function(   $,
       contentDiv.addClass('ng-app');
 
       // due to chrome extension can work only in CSP (Content Security Policy)
-       // more details http://docs.angularjs.org/api/ng.directive:ngCsp
+      // more details http://docs.angularjs.org/api/ng.directive:ngCsp
       contentDiv.addClass('ng-csp');
     });
   });

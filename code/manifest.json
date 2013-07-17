@@ -38,8 +38,7 @@
         "js/requireContent.js",
         "js/requireConfig.js",
         "js/content.js"
-      ],
-      "css": ["css/bootstrap.css"]
+      ]
     }
   ]
 }
