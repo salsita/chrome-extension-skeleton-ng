@@ -1,4 +1,11 @@
-  requirejs.config(requireConfig);
+//
+// content script based on angular application
+//
+// Some div /html/content.html injects to content page,
+// and application will be bootstrapped in the injected div.
+//
+
+requirejs.config(requireConfig);
 
 requirejs([ 'jquery',
             'config',
@@ -26,6 +33,7 @@ function(   $,
   logging.debug("content started");
 
   'use strict';
+  // load injected html template from extension's resources
   client.sendBroadcast({
     cmd: 'LoadHtml',
     args: {
@@ -34,14 +42,16 @@ function(   $,
     }
   }, function(response) {
     $(function() {
-      // inject html to content page (begin of the body)
+      // inject html to content page (first body div)
       $(response)
       .prependTo('body');
 
       // Find injected (from content.html) div
       var contentDiv = $('#contentDiv');
 
+      // bootstrap angular application inside the injected div
       angular.bootstrap(contentDiv, [contentApp['name']]);
+
       // Because of RequireJS we need to bootstrap the app app manually
       // and Angular Scenario runner won't be able to communicate with our app
       // unless we explicitely mark the container as app holder

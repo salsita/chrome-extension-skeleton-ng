@@ -1,3 +1,8 @@
+//
+// Content angular application
+// For content and background pages different, independent angular application are used
+//
+
 define([
   'angular',
   'content/contentFilters',

@@ -1,8 +1,13 @@
+//
+// Controller for content script
+//
+
 define(['util/messagingClient', 'logging', 'staticConfig'],
   function(client, logging, sc) {
   logging.init(true, "contentctrl", client);
 	return ['$scope', '$location', '$http', function($scope, $location, $http) {
 
+    // define some variable for check if angular works ok
 		$scope.content_script = "Content Script";
 
 		// because this has happened asynchronously we've missed

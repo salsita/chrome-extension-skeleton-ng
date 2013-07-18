@@ -5,7 +5,7 @@ define(['angular', 'util/messagingClient', 'logging', 'staticConfig'],
 
   return angular.module('contentApp.controllers', [])
 
-    // welcome controller
+    // content controller
     .controller('ContentController', ['$scope', '$location',
       function($scope, $location) {
         require(['content/controllers/contentctrl'], function(contentctrl) {

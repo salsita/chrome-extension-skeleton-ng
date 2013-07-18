@@ -1,3 +1,7 @@
+//
+// Filter for content angular application
+//
+
 define(['angular'], function (angular) {
   'use strict';
 
