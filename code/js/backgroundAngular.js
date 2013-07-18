@@ -6,8 +6,8 @@ requirejs([ 'jquery',
             'util/messagingClient',
             'staticConfig',
             'logging',
-            'app',
-            'routes'
+            'background/app',
+            'background/routes'
             ],
 function( $,
           angular,

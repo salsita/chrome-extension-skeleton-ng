@@ -1,5 +1,5 @@
 // routes for angular application
-define(['util/messagingClient', 'angular', 'app', 'logging', 'configSerializer', 'staticConfig'],
+define(['util/messagingClient', 'angular', 'background/app', 'logging', 'configSerializer', 'staticConfig'],
   function(client, angular, app, logging, configSerializer, sc) {
   logging.init(true, "routes", client);
   'use strict';

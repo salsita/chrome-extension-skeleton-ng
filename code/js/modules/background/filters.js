@@ -2,7 +2,7 @@ define(['angular'], function (angular) {
   'use strict';
 
   // filer for list object for iterate by properties
-  angular.module('passApp.filters', [])
+  angular.module('bgApp.filters', [])
   .filter('searchFilter', function() {
     return function(items, query) {
       var result = {};
