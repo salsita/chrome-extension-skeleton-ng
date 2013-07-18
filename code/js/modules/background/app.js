@@ -1,3 +1,7 @@
+//
+// Background script angular application
+//
+
 define([
   'angular',
   'background/filters',

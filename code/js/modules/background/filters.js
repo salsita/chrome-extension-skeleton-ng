@@ -1,3 +1,7 @@
+//
+// filters for angular-based background application
+//
+
 define(['angular'], function (angular) {
   'use strict';
 

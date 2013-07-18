@@ -1,17 +1,5 @@
 <div  class="container">
   <div>
-    <h1>Welcome to extension<h1>
-  </div>
-  <div>
-    <label>Enter your name<label>
-    <div>
-      <form name="nameForm">
-        <div class="control-group" ng-class="{error: nameForm.yourName.$invalid}">
-          <input type="text" name="yourName" ng-model="yourName" placeholder="Enter your name here" required>
-          <span ng-show="nameForm.yourName.$error.required" class="help-inline">Required</span>
-        </div>
-        <button class="btn btn-primary"  ng-click="Continue()" ng-disabled="nameForm.$invalid">Continue</button>
-      </form>
-    </div>
+    <h3>Welcome to Angular {{welcome_page}}</h3>
   </div>
 </div>
