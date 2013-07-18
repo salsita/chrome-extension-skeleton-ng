@@ -38,14 +38,8 @@ function(   $,
       $(response)
       .prependTo('body');
 
+      // Find injected (from content.html) div
       var contentDiv = $('#contentDiv');
-
-      /*
-      var contentApp = angular.module("contentApp", []);
-      contentApp.controller("contentController", function($scope, $http){
-        $scope.content_script = "Content Script";
-      });
-      */
 
       angular.bootstrap(contentDiv, [contentApp['name']]);
       // Because of RequireJS we need to bootstrap the app app manually
