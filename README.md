@@ -29,7 +29,7 @@ Main features:
                 /background
                     /controllers
                 /content
-                    /controllers                
+                    /controllers
                 /util
     /tests
         /pure-unit
