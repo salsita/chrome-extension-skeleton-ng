@@ -1,11 +1,9 @@
+//
+// Here is changeable extension config,
+// which will be storied and loaded to/from localStorage
+//
+
 define({
-  // some string option
-  name: "Name",
-
-  // some bool option
-  boolOption: true,
-
-  // some object option
-  hostsList: {"www.gmail.com": true}
-
+   // some bool option
+  boolOption: true
 });

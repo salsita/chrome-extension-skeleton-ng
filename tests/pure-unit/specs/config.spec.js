@@ -13,15 +13,7 @@ requirejs.config(rc.init());
 var config = requirejs('config');
 
 describe("config", function() {
-  it ("Check name", function() {
-    config.name.should.exist;
-  });
-
   it ("Check bool options", function() {
     config.boolOption.should.exist;
-  });
-
-  it ("Check hosts list", function() {
-    config.hostsList["www.gmail.com"].should.equal(true);
   });
 });

@@ -1,4 +1,7 @@
+//
 // background page for extension
+// this page is invisible, so no any angular here
+//
 requirejs.config(requireConfig);
 
 requirejs([ 'jquery',

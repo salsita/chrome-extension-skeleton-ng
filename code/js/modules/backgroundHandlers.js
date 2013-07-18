@@ -1,12 +1,10 @@
 define(['util/template',
         'configSerializer',
-        'logging',
-        'staticConfig'
+        'logging'
        ],
   function( template,
             configSerializer,
-            logging,
-            sc
+            logging
           ) {
 
 

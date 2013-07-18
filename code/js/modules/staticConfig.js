@@ -1,22 +1,20 @@
+//
 // static strings and values for application
+// extension config consts of two parts:
+//  - static config (some strings, consts) which never changed
+//  - dynamic config, which will be storied in localStorage
+//
 define({
+
   // static extension config section
   config : {
+    // name for store config string in extension localStorage
     localStoreConfigName: 'config',
+
+    // default config, which will be assigned for first run
     defaultConfig: {
-      // some string option
-      name: "Name",
-
       // some bool option
-      boolOption: true,
-
-      // some array option
-      hostsList: {
-        "www.google.com" : true,
-        "www.nasa.gov": true,
-        "www.youtube.com" : true,
-        "www.yandex.com" : true
-      }
+      boolOption: true
     }
   },
 
@@ -25,9 +23,5 @@ define({
     options: "/options",
     welcome: "/welcome",
     popup: "/popup"
-  },
-
-  // options page url
-  optionsPageUrl: "/html/application.html#/options"
-
+  }
 });

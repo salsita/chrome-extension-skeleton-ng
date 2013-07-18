@@ -26,7 +26,10 @@ Main features:
             /lib
                 /angular
             /modules
-                /controllers
+                /background
+                    /controllers
+                /content
+                    /controllers                
                 /util
     /tests
         /pure-unit
@@ -43,7 +46,8 @@ script(s), and popup script
 * `js/lib` - third party libraries, see README.md file there for details
 * `js/modules` - all extension-specific code in AMD modules (can be
 organised in sub-directories)
-* `js/modules/controllers` - Angular.js controllers
+* `js/modules/background` - Angular.js application for background pages
+* `js/modules/content` - Angular.js application for content pages
 * `js/util` - common functionality (messaging and templates) for the
 extensions, written as AMD modules
 

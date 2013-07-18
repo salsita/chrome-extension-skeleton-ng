@@ -13,6 +13,11 @@ define([], function() {
         this.log(this.INFO, str);
       },
 
+      // error log
+      error: function(str) {
+        this.log(this.ERROR, str);
+      },
+
       // log function
       log: function (priority, str) {
 
@@ -43,6 +48,7 @@ define([], function() {
       // log priorities
       DEBUG: 0,
       INFO: 1,
+      ERROR: 2,
 
       // if it is local content context
       isContent: isContentModule,
