@@ -14,15 +14,15 @@ function(   $,
             configSerializer,
             sc) {
 
-  logging.init(true,  "background");
+  var log = new logging(true,  "background");
 
-  logging.info('Background script (background.js):');
+  log.info('Background script (background.js):');
 
-  logging.info('+ jQuery     loaded in version:', $.fn.jquery);
-  logging.info('+ underscore loaded in version:', _.VERSION);
+  log.info('+ jQuery     loaded in version:', $.fn.jquery);
+  log.info('+ underscore loaded in version:', _.VERSION);
 
   var config = configSerializer.Get();
-  logging.info('Configuration: ' + JSON.stringify(config, null, '\t'));
+  log.info('Configuration: ' + JSON.stringify(config, null, '\t'));
 
   messaging.backgroundInitialize();
 });

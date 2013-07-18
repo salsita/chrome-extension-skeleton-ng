@@ -1,7 +1,9 @@
-define(['util/messagingClient', 'logging', 'staticConfig', 'jquery', 'lib/purl'],
-  function(client, logging, sc, $, purl) {
-  logging.init(true, "popupctrl", client);
+define(['util/messagingClient', 'logging'],
+  function(client, logging) {
+
+  var log = new logging(true, "popupctrl", client);
   return ['$scope', '$location', '$http', function($scope, $location, $http) {
+    log.debug("popupctrl started");
 
     // some variable for check if angular works ok
     $scope.popup_page = "Popup page";

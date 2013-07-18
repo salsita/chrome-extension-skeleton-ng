@@ -10,7 +10,8 @@ requirejs([ 'jquery',
             'staticConfig',
             'logging',
             'background/app',
-            'background/routes'
+            'background/routes',
+            'underscore'
             ],
 function( $,
           angular,
@@ -18,9 +19,11 @@ function( $,
           sc,
           logging,
           app,
-          routes
+          routes,
+          _
           ) {
-  logging.init(true, "welcome", client);
+
+  var log = new logging(true, "backgroundAngular", client);
   'use strict';
 
   $(document).ready(function () {
@@ -35,5 +38,7 @@ function( $,
     // due to chrome extension can work only in CSP (Content Security Policy)
      // more details http://docs.angularjs.org/api/ng.directive:ngCsp
     $html.addClass('ng-csp');
+
+    log.debug("Angular BG application is loaded");
   });
 });

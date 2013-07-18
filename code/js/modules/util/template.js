@@ -1,4 +1,4 @@
-define(['jquery', 'lib/mustache'], function($, mustache) {
+define(['jquery'], function($) {
 
   // template html cache
   var _cache = {};
@@ -22,21 +22,6 @@ define(['jquery', 'lib/mustache'], function($, mustache) {
         });
       }
       return _cache[target];
-    },
-
-    // template compilation
-    compile: function(html, data) {
-      return mustache.render(html, data);
-    },
-
-    // load + compile
-    compileFromFile: function(name, data) {
-      var html = this.load(name);
-      if (html) {
-        return this.compile(html, data);
-      } else {
-        return null;
-      }
     }
   };
 

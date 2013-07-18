@@ -1,60 +1,59 @@
 // module for logging
 // from options/popup and bg pages to one bg page
-define({
-  // init log
-  init: function(isContentModule, _moduleName, _client) {
-    this.isContent = isContentModule;
-    this.moduleName = _moduleName;
-    this.client = _client;
-  },
+define([], function() {
+  var log = function(isContentModule, _moduleName, _client) {
+    return {
+      // debug log
+      debug: function(str) {
+        this.log(this.DEBUG, str);
+      },
 
-  // debug log
-  debug: function(str) {
-    this.log(this.DEBUG, str);
-  },
+      // info log
+      info: function(str) {
+        this.log(this.INFO, str);
+      },
 
-  // info log
-  info: function(str) {
-    this.log(this.INFO, str);
-  },
+      // log function
+      log: function (priority, str) {
 
-  // log function
-  log: function (priority, str) {
+        str =  "[" + priority + "]" + str;
 
-    str =  "[" + priority + "]" + str;
-
-    if (this.moduleName) {
-      str = "[" + this.moduleName + "]" + str;
-    }
-
-    if (this.isContent && this.client) {
-      // send log to bg page
-      this.client.sendBroadcast({
-        cmd: 'LogFromContent',
-        args: {
-          msg: str
+        if (this.moduleName) {
+          str = "[" + this.moduleName + "]" + str;
         }
-      });
-    } else {
-      // background page
-      console.log(str);
-    }
-  },
 
-  LogFromContent: function(message) {
-    console.log(message);
-  },
+        if (this.isContent && this.client) {
+          // send log to bg page
+          this.client.sendBroadcast({
+            cmd: 'LogFromContent',
+            args: {
+              msg: str
+            }
+          });
+        } else {
+          // background page
+          console.log(str);
+        }
+      },
 
-  // log priorities
-  DEBUG: 0,
-  INFO: 1,
+      LogFromContent: function(message) {
+        console.log(message);
+      },
 
-  // if it is local content context
-  isContent: false,
+      // log priorities
+      DEBUG: 0,
+      INFO: 1,
 
-  // module name
-  moduleName: null,
+      // if it is local content context
+      isContent: isContentModule,
 
-  // client for content script
-  client: null
+      // module name
+      moduleName: _moduleName,
+
+      // client for content script
+      client: _client
+    };
+  };
+
+  return log;
 });

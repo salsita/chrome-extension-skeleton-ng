@@ -8,18 +8,14 @@
 requirejs.config(requireConfig);
 
 requirejs([ 'jquery',
-            'config',
             'util/messaging',
             'util/messagingClient',
-            'lib/purl',
             'logging',
             'angular',
             'content/contentApp'],
 function(   $,
-            config,
             messaging,
             client,
-            purl,
             logging,
             angular,
             contentApp) {
@@ -29,8 +25,8 @@ function(   $,
   // contentHandlers.js
 
   messaging.contentInitialize();
-  logging.init(true, "content", client);
-  logging.debug("content started");
+  var log = new logging(true, "content", client);
+  log.debug("content started");
 
   'use strict';
   // load injected html template from extension's resources

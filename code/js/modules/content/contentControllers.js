@@ -1,7 +1,7 @@
-define(['angular', 'util/messagingClient', 'logging', 'staticConfig'],
-  function (angular, client, logging, sc) {
+define(['angular'],
+  function (angular) {
   'use strict';
-  logging.init(true, "ContentControls", client);
+
 
   return angular.module('contentApp.controllers', [])
 

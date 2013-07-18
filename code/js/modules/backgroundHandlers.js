@@ -15,13 +15,8 @@ define(['util/template',
   //
   // See util/messaging.js for more details.
   //
-  logging.init(false, "backgroundHandler");
-
+  var log = new logging(false, "backgroundHandler");
   return {
-
-    handleGetHtml: function(args, sender, sendResponse) {
-      sendResponse(template.compileFromFile(args.template, args.data));
-    },
 
     // just load without render
     handleLoadHtml: function(args, sender, sendResponse) {
@@ -39,14 +34,7 @@ define(['util/template',
     },
 
     handleLogFromContent: function(args, sender, sendResponse) {
-      logging.LogFromContent(args.msg);
-      sendResponse({});
-    },
-
-    handleRedirectTab: function(args, sender, sendResponse) {
-      // TODO it in external module
-      logging.debug("RedirectTab to url=" + args.url);
-      chrome.tabs.update(args.tabId, {url: args.url});
+      log.LogFromContent(args.msg);
       sendResponse({});
     }
   };

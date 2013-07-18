@@ -1,8 +1,9 @@
-define(['util/messagingClient', 'logging', 'staticConfig'],
-  function(client, logging, sc) {
+define(['util/messagingClient', 'logging'],
+  function(client, logging) {
 
-  logging.init(true, "optionsctrl", client);
+  var log = new logging(true, "optionsctrl", client);
 	return ['$scope', '$location', '$http', function($scope, $location, $http) {
+    log.debug("optionsctrl started");
 
     // some variable for check if angular works ok
     $scope.options_page = "Options page";
