@@ -4,12 +4,12 @@
 
 define(['util/messagingClient', 'logging'],
   function(client, logging) {
-    var log = new logging(true, "contentctrl", client);
+    var log = new logging(true, 'contentctrl', client);
     return ['$scope', '$location', '$http', function($scope, $location, $http) {
-      log.debug("Content ctrl started")
+      log.debug('Content ctrl started')
 
       // define some variable for check if angular works ok
-      $scope.content_script = "Content Script";
+      $scope.content_script = 'Content Script';
 
       // because this has happened asynchronously we've missed
       // Angular's initial call to $apply after the controller has been loaded

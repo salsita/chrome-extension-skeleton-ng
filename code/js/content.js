@@ -25,8 +25,8 @@ function(   $,
   // contentHandlers.js
 
   messaging.contentInitialize();
-  var log = new logging(true, "content", client);
-  log.debug("content started");
+  var log = new logging(true, 'content', client);
+  log.debug('content started');
 
   'use strict';
   // load injected html template from extension's resources

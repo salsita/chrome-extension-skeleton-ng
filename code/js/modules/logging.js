@@ -21,10 +21,10 @@ define([], function() {
       // log function
       log: function (priority, str) {
 
-        str =  "[" + priority + "]" + str;
+        str =  '[' + priority + ']' + str;
 
         if (this.moduleName) {
-          str = "[" + this.moduleName + "]" + str;
+          str = '[' + this.moduleName + ']' + str;
         }
 
         if (this.isContent && this.client) {

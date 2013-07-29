@@ -23,7 +23,7 @@ function( $,
           _
           ) {
 
-  var log = new logging(true, "backgroundAngular", client);
+  var log = new logging(true, 'backgroundAngular', client);
   'use strict';
 
   $(document).ready(function () {
@@ -39,6 +39,6 @@ function( $,
      // more details http://docs.angularjs.org/api/ng.directive:ngCsp
     $html.addClass('ng-csp');
 
-    log.debug("Angular BG application is loaded");
+    log.debug('Angular BG application is loaded');
   });
 });

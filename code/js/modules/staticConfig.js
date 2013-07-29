@@ -20,8 +20,8 @@ define({
 
   // routes consts for angular application
   routes: {
-    options: "/options",
-    welcome: "/welcome",
-    popup: "/popup"
+    options: '/options',
+    welcome: '/welcome',
+    popup: '/popup'
   }
 });

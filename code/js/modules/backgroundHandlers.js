@@ -13,7 +13,7 @@ define(['util/template',
   //
   // See util/messaging.js for more details.
   //
-  var log = new logging(false, "backgroundHandler");
+  var log = new logging(false, 'backgroundHandler');
   return {
 
     // just load without render

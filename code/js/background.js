@@ -17,7 +17,7 @@ function(   $,
             configSerializer,
             sc) {
 
-  var log = new logging(true,  "background");
+  var log = new logging(true,  'background');
 
   log.info('Background script (background.js):');
 
@@ -33,12 +33,12 @@ function(   $,
 // Check whether new version is installed
 // this call should stay here due to requirejs async
 chrome.runtime.onInstalled.addListener(function(details){
-  if(details.reason == "install"){
-    console.log("This is a first install!");
-    chrome.tabs.create({url: "html/application.html#/welcome"});
-  } else if(details.reason == "update"){
-    console.log("This is a update!");
+  if(details.reason == 'install'){
+    console.log('This is a first install!');
+    chrome.tabs.create({url: 'html/application.html#/welcome'});
+  } else if(details.reason == 'update'){
+    console.log('This is a update!');
     console.log(JSON.stringify(details));
-    chrome.tabs.create({url: "html/application.html#/options"});
+    chrome.tabs.create({url: 'html/application.html#/options'});
   }
 });

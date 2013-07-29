@@ -2,7 +2,7 @@
 define(['util/messagingClient', 'angular', 'background/app', 'logging', 'configSerializer', 'staticConfig'],
   function(client, angular, app, logging, configSerializer, sc) {
   'use strict';
-  var log = new logging(true, "routes", client);
+  var log = new logging(true, 'routes', client);
 
   return app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when(sc.routes.welcome, {
@@ -24,10 +24,10 @@ define(['util/messagingClient', 'angular', 'background/app', 'logging', 'configS
   }])
   .run( function($rootScope, $location) {
     // register listener to watch route changes
-    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-      log.debug("Location path: " + $location.path());
+    $rootScope.$on( '$routeChangeStart', function(event, next, current) {
+      log.debug('Location path: ' + $location.path());
       // inject something to rootScope
-      $rootScope.something = "something";
+      $rootScope.something = 'something';
     });
   });
 });
