@@ -5,7 +5,7 @@
 define(['angular'], function (angular) {
   'use strict';
 
-  // filer for list object for iterate by properties
+  // filter for list object for iterate by properties
   angular.module('contentApp.filters', [])
   .filter('searchFilter', function() {
     return function(items, query) {
