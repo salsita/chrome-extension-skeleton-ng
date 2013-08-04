@@ -1,30 +1,26 @@
 /*global browser sleep element describe beforeEach it expect */
 
-(function() {
-'use strict';
+(function () {
 
-describe('My Application', function() {
-	beforeEach(function() {
-		//browser().navigateTo('/');
-    browser().navigateTo('chrome-extension://aopgehikihpnclbfeohobanjecpiefho/html/application.html#/options');
-		sleep(0.5);
-	});
+    'use strict';
+
+    var protractor = require('protractor');
+    require('protractor/jasminewd');
 
 
-	it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
-		expect(browser().location().url()).toBe("/view1");
-	});
+    describe('My Application', function () {
+        var ptor;
 
-	describe('View 1', function() {
-		beforeEach(function() {
-			browser().navigateTo('#/view1');
-			sleep(0.5);
-		});
+        describe('Test Option', function () {
+            ptor = protractor.getInstance();
 
-		it('should...', function() {
-			//...
-		});
-	});
-});
+            it('user can click', function () {
+                ptor.get('chrome-extension://kdaafnldkicchmkjkllomgmifliacakb/html/application.html#/options');
+                ptor.findElement(protractor.By.id('someOptions')).click();
+            });
+
+        });
+
+    });
 
 })();

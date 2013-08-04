@@ -26,7 +26,6 @@ function( $,
 
   $(document).ready(function () {
     var $html = $('html');
-    angular.bootstrap($html, [app['name']]);
     // Because of RequireJS we need to bootstrap the app app manually
     // and Angular Scenario runner won't be able to communicate with our app
     // unless we explicitely mark the container as app holder
@@ -37,6 +36,7 @@ function( $,
      // more details http://docs.angularjs.org/api/ng.directive:ngCsp
     $html.addClass('ng-csp');
 
+    angular.bootstrap($html, [app['name']]);
     log.debug('Angular BG application is loaded');
   });
 });
