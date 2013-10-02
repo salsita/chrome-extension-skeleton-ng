@@ -123,7 +123,3 @@ All pages send log to background page, so it is enough to open bg page console l
 
 *   How to test e2e google chrome extension with karma?    
     http://stackoverflow.com/questions/17369462/how-to-test-e2e-google-chrome-extension-with-karma
-
-
-*   Fork of Angular Seed but with changes needed for requireJS support.
-https://github.com/tnajdek/angular-requirejs-seed
