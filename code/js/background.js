@@ -24,8 +24,10 @@ function(   $,
   log.info('+ jQuery     loaded in version:', $.fn.jquery);
   log.info('+ underscore loaded in version:', _.VERSION);
 
-  var config = configSerializer.Get();
-  log.info('Configuration: ' + JSON.stringify(config, null, '\t'));
+  configSerializer.Get()
+  .then(function(config) {
+    log.info('Configuration: ' + JSON.stringify(config, null, '\t'));
+  });
 
   messaging.backgroundInitialize();
 });

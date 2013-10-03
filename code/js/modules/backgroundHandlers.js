@@ -27,8 +27,10 @@ define(['util/template',
     },
 
     handleGetConfig: function(args, sender, sendResponse) {
-      var cfgObj = configSerializer.Get();
-      sendResponse(cfgObj);
+      configSerializer.Get()
+      .then(function(cfg) {
+        sendResponse(cfgObj);
+      });
     },
 
     handleLogFromContent: function(args, sender, sendResponse) {

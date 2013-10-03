@@ -3,3 +3,4 @@ nacl_sdk/
 pkg/
 node_modules/
 *.sublime*
+*.log
