@@ -2,20 +2,25 @@ define(['staticConfig', 'lib/q'], function(sc, Q) {
   return {
     Get: function() {
       var deferred = Q.defer();
-      chrome.storage.sync.get(sc.config.localStoreConfigName, function (obj) {
-        console.log('Read config: ', obj);
-        deferred.resolve(obj);
+      chrome.storage.sync.get(sc.config.localStoreConfigName, function (cfg) {
+        if (!cfg) {
+          cfg = sc.config;
+        }
+        deferred.resolve(cfg);
       });
 
       return deferred.promise;
     },
     Set: function(newCfg) {
-      //localStorage.setItem(sc.config.localStoreConfigName, JSON.stringify(newCfg));
+      var deferred = Q.defer();
+
       var cfgObj = {};
       cfgObj[sc.config.localStoreConfigName] = newCfg;
       chrome.storage.sync.set(cfgObj, function() {
-        console.log('Save config: ', cfgObj);
+        deferred.resolve(newCfg);
       });
+
+      return deferred.promise;
     }
   };
 });

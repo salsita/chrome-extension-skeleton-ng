@@ -16,7 +16,7 @@ define(['util/messagingClient', 'logging'],
     },
     function(config) {
       log.debug('Config loaded: ' + JSON.stringify(config));
-      $scope.config = config;
+      $scope.config = config.config;
 
       $scope.$apply();
     });

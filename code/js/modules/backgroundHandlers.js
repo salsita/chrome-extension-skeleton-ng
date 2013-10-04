@@ -22,15 +22,19 @@ define(['util/template',
     },
 
     handleSetConfig: function(args, sender, sendResponse) {
-      configSerializer.Set(args.config);
-      sendResponse(args.config);
+      configSerializer.Set(args.config)
+      .then(function(cfg) {
+        sendResponse(cfg);
+      });
+      return true;
     },
 
     handleGetConfig: function(args, sender, sendResponse) {
       configSerializer.Get()
       .then(function(cfg) {
-        sendResponse(cfgObj);
+        sendResponse(cfg);
       });
+      return true;
     },
 
     handleLogFromContent: function(args, sender, sendResponse) {
