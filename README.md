@@ -1,4 +1,4 @@
-# chrome-angular-skeleton
+# chrome-extension-skeleton-ng
 
 [Google chrome extension](http://developer.chrome.com/extensions/index.html) skeleton, based on
 *   [angular.js](http://angularjs.org)
@@ -104,7 +104,7 @@ All pages send log to background page, so it is enough to open bg page console l
 
 *   Salsita    
     Original chrome-skeleton with require.js    
-    https://github.com/salsita/chrome-skeleton
+    https://github.com/salsita/chrome-extension-skeleton
 
 
 *   Fork of [Angular Seed](https://github.com/angular/angular-seed) but with changes needed for requireJS support.    
